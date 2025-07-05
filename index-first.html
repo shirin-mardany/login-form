@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animated Login Form Using HTML CSS</title>
+    <title>Animated Login Form Using HTML CSS JS</title>
     <!-- css files  -->
     <link rel="stylesheet" href="style-first.css" />
   </head>
@@ -28,12 +28,12 @@
      
            <div class="inputBox">
           
-                <input type="text" required="required">
+                <input type="text" id="username" required="required">
                 <span>Username</span>
             </div>
 
             <div class="inputBox">
-                <input type="password" required="required">
+                <input type="password" id="password" required="required">
                 <span>Password</span>
             </div>
             <!-- ------------------------------------- -->
@@ -61,10 +61,13 @@
     </div>
     <!-- script files  -->
     <script src="script-first.js"></script>
+
+    <!--  این نسخه مخصوص مرورگرهای مدرنه که از ES Modules پشتیبانی می‌کنن -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
+    <!--  این نسخه مخصوص مرورگرهایی هست که type="module" رو نمی‌فهمن (مثل IE یا مرورگرهای خیلی قدیمی). -->
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"

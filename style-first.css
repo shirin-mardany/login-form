@@ -35,6 +35,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-wrap: break-word; /* برای شکستن متن بلند */
+  word-break: break-all;     /* برای شکستن کلمات بلند */
+  padding: 20px;        
+  text-align: center;  
 }
 h2 {
   font-size: 2em;

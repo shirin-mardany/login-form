@@ -1,8 +1,10 @@
 const loginformEl = document.querySelector("form");
+const token = document.querySelector(".wrapper");
 const blobEl = document.querySelector(".blob");
 
+
 const passwordInput = document.querySelector("#password");
-const emailInput = document.querySelector("#email");
+const usernameInput = document.querySelector("#username");
 console.log(blobEl);
 
 loginformEl.addEventListener("submit", async (e) => {
@@ -10,15 +12,20 @@ loginformEl.addEventListener("submit", async (e) => {
   try {
     const res = await fetch(`https://fakestoreapi.com/auth/login`, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
-        username: emailInput.value,
+        username: usernameInput.value,
         password: passwordInput.value,
       }),
     });
     // creat json file from data for use that >>
     const data = await res.json();
+    console.log(data)
+    if (!res.ok) throw new Error(data.message || "Login failed");
     loginformEl.classList.add("hide");
-    blobEl.textContent = data.token;
+    token.textContent = data.token;
   } catch (err) {
     alert("noooooooooooooooooooooo");
   }
